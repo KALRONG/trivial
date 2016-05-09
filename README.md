@@ -56,6 +56,13 @@ Just answer kevin and you will get the default flag.
 
 Apart from the logs that appear in docker the servers stores a log file per ip in the default location /log inside the container, this can also be changed with the ```-l, --log``` option, if you want to save them locally you can always map the log folder to your machine.
 
+Questions format:
+-----------------
+
+The trivial accepts regex on the answers (check the sample questions file) and the default format is: "questions:answer"
+
+If you don't use regex the answer given by the player should match the one you provided, but with a proper set regex you can accept variations like plurals or, in the case of the example, that one word is enough.
+
 Suggestions, questions, errors, etc:
 ------------------------------------
 
