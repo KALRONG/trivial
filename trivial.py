@@ -8,9 +8,10 @@ import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-p","--port", help="Specify which port to be used. Default: 8100", type=int,default=8100)
-parser.add_argument("-q","--questions", help="File containing the questions for the trivial. Default: ./questions", default="./questions")
+parser.add_argument("-q","--questions", help="File containing the questions for the trivial. Default: /root/questions", default="/root/questions")
 parser.add_argument("-l","--log",help="Folder where the logs will be saved. Defauld: ./log/", default="./log/")
 parser.add_argument("-f","--flag",help="Flag given at the end of the game to the winners. Default: flag{Tr1v14L-RuL3z}", default="flag{Tr1v14L-RuL3z}")
+parser.add_argument("-a","--answers",help="Number of correct answers before the flag is given. Default: 1",type=int,default=1)
 args = parser.parse_args()
 
 if os.path.exists(args.questions):
@@ -22,7 +23,7 @@ else:
 
 if not os.path.exists(args.log):
   try:
-    os.makedirs("args.log")
+    os.makedirs(args.log)
   except:
     print "Error creating log folder."
     raise SystemExit
@@ -43,7 +44,7 @@ class ClientThread ( threading.Thread ):
       logfile=open(args.log+'trivial-'+self.details[0]+'.log','a')
       logfile.write("["+self.details [0]+"] Connected\n")
       print "["+self.details [0]+"] Connected"
-      preguntas = random.sample(range(0, longitud), 10)
+      preguntas = random.sample(range(0, longitud), args.answers)
       self.channel.send ('Connected to Trivial!!!\n')
       for x in preguntas:
         splitquestion=questions[x].split(":")
