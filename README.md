@@ -25,9 +25,8 @@ optional arguments:
   -f FLAG, --flag FLAG  Flag given at the end of the game to the winners.
                         Default: flag{Tr1v14L-RuL3z}
   -a ANSWERS, --answers ANSWERS
-                        Number of correct answers before the flag is given.Connected to Trivial!!!
-Name of a famous hacker with the initials KM:
-                        Default: 1
+                        Number of correct answers before the flag is given.
+       					Default: 1
 ```
 
 As the port where the trivial listens can be changed I haven't set any exposed ports so you will need to do it yourself.
