@@ -11,7 +11,6 @@ Usage:
 Here is the help of the trivial server:
 
 ```
-docker run --rm kalrong/trivial -h 
 usage: trivial.py [-h] [-p PORT] [-q QUESTIONS] [-l LOG] [-f FLAG]
                   [-a ANSWERS]
 
@@ -20,13 +19,13 @@ optional arguments:
   -p PORT, --port PORT  Specify which port to be used. Default: 8100
   -q QUESTIONS, --questions QUESTIONS
                         File containing the questions for the trivial.
-                        Default: ./questions
+                        Default: /root/questions
   -l LOG, --log LOG     Folder where the logs will be saved. Defauld: ./log/
   -f FLAG, --flag FLAG  Flag given at the end of the game to the winners.
                         Default: flag{Tr1v14L-RuL3z}
   -a ANSWERS, --answers ANSWERS
                         Number of correct answers before the flag is given.
-       					Default: 1
+                        Default: 1
 ```
 
 As the port where the trivial listens can be changed I haven't set any exposed ports so you will need to do it yourself.
